@@ -1,12 +1,12 @@
 const apiRouter = require("express").Router();
 const tasksController = require("../controllers/tasksController");
 
-router
+apiRouter
   .route("/api/tasks")
   .get(tasksController.findAll)
   .post(tasksController.create);
 
-router
+apiRouter
   .route("api/tasks/:id")
   .get(tasksController.findById)
   .put(tasksController.update)
