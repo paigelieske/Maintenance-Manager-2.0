@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import EverythingContainer from './Components/EverythingContainer';
+import ContainerForTasks from './Components/ContainerForTasks'
+import NavBar from './Components/NavBar'
+// import StartButtonCreater from './Components/StartButton'
+import NewTaskDivAndButtons from './Components/NewTaskDivAndButtons'
+import Footer from './Components/Footer'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <NavBar></NavBar>
+      <EverythingContainer>
+        <ContainerForTasks>
+        </ContainerForTasks>
+
+        <NewTaskDivAndButtons/>
+      </EverythingContainer>
+      <Footer/>
+    </React.Fragment>
   );
 }
 
