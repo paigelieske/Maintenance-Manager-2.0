@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 
 function Button(props) {
-    if (props.button === "Note") {
-        return (
+	if (props.button === 'Note') {
+		return (
 			<React.Fragment>
 				<div id="notesForm">
 					<label>
-						Please Specify Problem (i.e. The sink is
-						leaking. Max=150)
+						Please Specify Problem (i.e. The sink is leaking.
+						Max=150)
 					</label>
 					<input
 						type="text"
 						id="problemNotes"
 						className="form-control text-center"
 						placeholder="Example input"
-						autocomplete="off"
+						onChange={props.onChange}
 					/>
 					<button
 						id="submitNotes"
@@ -30,28 +30,20 @@ function Button(props) {
 				</div>
 			</React.Fragment>
 		);
-    }
-    else if (props.button === "Task has been submitted") {
-        return(
-            <div>
-            {props.button}
-        </div>
-        )
-        
-    }
-    else {
-        return (
-            <input
-                type="button"
-                id={props.button}
-                value={props.button}
-                onClick={() => {
-                    props.clickFunction(props.button)
-                }}>
-            </input >
-        )
-    }
-
+	} else if (props.button === 'Task has been submitted') {
+		return <div>{props.button}</div>;
+	} else {
+		return (
+			<input
+				type="button"
+				id={props.button}
+				value={props.button}
+				onClick={() => {
+					props.clickFunction(props.button);
+				}}
+			/>
+		);
+	}
 }
 
-export default Button
+export default Button;
