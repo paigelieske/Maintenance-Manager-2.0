@@ -8,6 +8,7 @@ function Row(props) {
                 <Button 
                 button={button} 
                 clickFunction={props.clickfunction}
+                onChange={props.onChange}
                 />
              ))}
         </div>
