@@ -13,6 +13,9 @@ function Button(props) {
                         id="problemNotes"
                         className="form-control text-center"
                         placeholder="Example input"
+                        onChange={
+                            props.onChange
+                        }
                     >
                     </input>
                     <button
