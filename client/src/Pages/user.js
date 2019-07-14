@@ -1,7 +1,7 @@
 import React from 'react';
-import EverythingContainer from "../Components/EverythingContainer"
-import ContainerForTasks from "../Components/ContainerForTasks"
-import NewTaskDivAndButtons from "../Components/NewTaskDivAndButtons"
+import EverythingContainer from "../Components/EverythingContainer/EverythingContainer"
+import ContainerForTasks from "../Components/ContainerForTasks/ContainerForTasks"
+import NewTaskDivAndButtons from "../Components/NewTaskDivAndButtons/NewTaskDivAndButtons"
 
 function UserPage() {
   return (
