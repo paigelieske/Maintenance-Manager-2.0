@@ -1,8 +1,9 @@
 import React from "react";
-import StartButtonCreater from './StartButton'
-import Row from './Row'
-let newTask = {};
+import StartButtonCreater from '../StartButton/StartButton';
+import Row from '../Row/Row';
+import "../EverythingContainer/EverythingContainer.css";
 
+let newTask = {};
 
 class NewTaskDivAndButtons extends React.Component {
     state = {
@@ -10,16 +11,15 @@ class NewTaskDivAndButtons extends React.Component {
         currentButtons: [[], [], [], [], [], []],
     }
 
-
     handleClick = (value) => {
         console.log(newTask)
         if (value) {
             if (value === "Start Button") {
                 this.setState((state) => {
-                    return (state.currentButtons.splice(0, 1, ["EastZone", "WestZone"]) &&state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, [])&& state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, [])) 
+                    return (state.currentButtons.splice(0, 1, ["East Zone", "West Zone"]) &&state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, [])&& state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, [])) 
                 })
             }
-            else if (value === "EastZone") {
+            else if (value === "East Zone") {
                 newTask["zone"] = (value)
                 this.setState((state) => {
                     return state.values.splice(0, 1, value)
@@ -29,7 +29,7 @@ class NewTaskDivAndButtons extends React.Component {
                             return (state.currentButtons.splice(1, 1, ["Purchasing", "Accounting", "Other Rooms East"]) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, [])&& state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, [])) 
                         }))
             }
-            else if (value === "WestZone") {
+            else if (value === "West Zone") {
                 newTask["zone"] = (value)
                 this.setState((state) => {
                     return state.values.splice(0, 1, value)
@@ -79,7 +79,7 @@ class NewTaskDivAndButtons extends React.Component {
                             return (state.currentButtons.splice(3, 1, ["Plumbing", "Electrical"])  && state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, []))
                         }))
             }
-            else if (value === "Personal Office" || value === "Cubicle Area" || value === "Lobby Or Reception") {
+            else if (value === "Personal Office" || value === "Cubicle Area" || value === "Lobby or Reception") {
                 newTask["room"] = (value)
                 this.setState((state) => {
                     return state.values.splice(2, 1, value)
@@ -136,7 +136,7 @@ class NewTaskDivAndButtons extends React.Component {
                 },
                     () =>
                         this.setState((state) => {
-                            return ( state.currentButtons.splice(0, 1, []) && state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, [])&& state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, ["Task has been submitted"]))
+                            return ( state.currentButtons.splice(0, 1, []) && state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, [])&& state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, ["Task has been submitted"] ))
                         }))
             }
             else {
@@ -163,6 +163,5 @@ class NewTaskDivAndButtons extends React.Component {
         )
     }
 }
-
 
 export default NewTaskDivAndButtons
