@@ -21,6 +21,7 @@ const NavBar = () => (
 				<li id="nav-item-index" className="nav-item" />
 			</ul>
 		</div>
+		
 	</nav>
 );
 
