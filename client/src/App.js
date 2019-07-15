@@ -1,8 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+<<<<<<< HEAD
 import UserPage from './Pages/user'
 import NavBar from './Components/Nav/Nav'
 import Footer from './Components/Footer/Footer'
+=======
+// import UserPage from './Pages/user'
+import Admin from './Pages/admin'
+import NavBar from './Components/NavBar'
+import Footer from './Components/Footer'
+import './App.css';
+>>>>>>> updates
 
 function App() {
   return (
@@ -10,10 +18,10 @@ function App() {
       <Router>
         <NavBar />
         <Switch>
-          <Route exact path="/" component={UserPage} />
-          <Route exact path="/users" component={UserPage} />
-          <Route exact path="/admin" component={UserPage} />
-          <Route component={UserPage} />
+          <Route exact path="/" component={Admin} />
+          <Route exact path="/users" component={Admin} />
+          <Route exact path="/admin" component={Admin} />
+          <Route component={Admin} />
         </Switch>
         <Footer />
       </Router>
