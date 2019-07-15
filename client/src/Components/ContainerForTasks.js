@@ -1,6 +1,5 @@
 import React from "react";
 import CardCreaterBasedOnType from "./CardTypeForTasks"
-
 let taskStatusArray = ["open", "pending", "closed"];
 
 function ContainerForTasks() {

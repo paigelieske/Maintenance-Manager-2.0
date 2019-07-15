@@ -8,6 +8,8 @@ function Row(props) {
                 <Button 
                 button={button} 
                 clickFunction={props.clickfunction}
+                handleSubmit={props.handleSubmit}
+                onChange={props.onChange}
                 />
              ))}
         </div>

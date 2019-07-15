@@ -13,6 +13,9 @@ function Button(props) {
                         id="problemNotes"
                         className="form-control text-center"
                         placeholder="Example input"
+                        onChange={
+                            props.onChange
+                        }
                     >
                     </input>
                     <button
@@ -20,23 +23,23 @@ function Button(props) {
                         type="button"
                         className="btn btn-secondary text-center"
                         value="Submit Notes"
-                        onClick={() => {
-                            props.clickFunction(props.button)
+                        onClick={(event) => {
+                            props.clickFunction(props.button); props.handleSubmit(event)
                         }}>
-                            Submit Notes
-                            </button> 
+                        Submit Notes
+                            </button>
 
                 </div>
             </React.Fragment>
         )
     }
     else if (props.button === "Task has been submitted") {
-        return(
+        return (
             <div>
-            {props.button}
-        </div>
+                {props.button}
+            </div>
         )
-        
+
     }
     else {
         return (
