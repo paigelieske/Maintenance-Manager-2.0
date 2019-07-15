@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserPage from './Pages/user'
-import NavBar from './Components/NavBar'
-import Footer from './Components/Footer'
+import NavBar from './Components/Nav/Nav'
+import Footer from './Components/Footer/Footer'
 
 function App() {
   return (
