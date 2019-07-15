@@ -2,14 +2,15 @@ import React from "react";
 import StartButtonCreater from '../StartButton/StartButton';
 import Row from '../Row/Row';
 import "../EverythingContainer/EverythingContainer.css";
-
-let newTask = {};
+import API from "../../utils/API";
 
 class NewTaskDivAndButtons extends React.Component {
     state = {
         newTask : {},
         values: [],
         currentButtons: [[], [], [], [], [], []],
+        newTask: {},
+        tasks: []
     }
 
     handleClick = (value) => {
@@ -164,6 +165,34 @@ class NewTaskDivAndButtons extends React.Component {
         // console.log(this.state.newTask)    
     }
 
+    handleSubmit = event => {
+        event.preventDefault();
+        console.log("api");
+        API.saveTask({
+            zone: this.state.newTask.zone,
+            department: this.state.newTask.department,
+            room: this.state.newTask.room,
+            problem: this.state.newTask.problem,
+            severity: this.state.newTask.severity,
+            note: this.state.newTask.notes
+        })
+            .then(res => this.emailTask())
+            .catch(err => console.log(err));
+    }
+
+    emailTask = () => {
+        API.emailTask({
+            zone: this.state.newTask.zone,
+            department: this.state.newTask.department,
+            room: this.state.newTask.room,
+            problem: this.state.newTask.problem,
+            severity: this.state.newTask.severity,
+            note: this.state.newTask.notes
+        })
+        .then(res => console.log("email res" + res))
+        .catch(err => console.log(err));
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -176,6 +205,7 @@ class NewTaskDivAndButtons extends React.Component {
                     return <Row
                         buttons={row}
                         clickfunction={this.handleClick}
+                        handleSubmit={this.handleSubmit}
                         onChange={this.handleChange}
                     ></Row>
                 })}
