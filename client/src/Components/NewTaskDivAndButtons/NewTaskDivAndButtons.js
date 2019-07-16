@@ -161,12 +161,14 @@ class NewTaskDivAndButtons extends React.Component {
                 return console.log("There was a problem rendering the buttons")
             }
         }
-        // console.log(this.state.newTask)    
     }
 
     render() {
         return (
             <React.Fragment>
+                <div class="col-sm-12">{Object.values(this.state.newTask).map((crumb, index)=>(
+                index<4 ? crumb + " > ": crumb ))}
+                </div>
                 <StartButtonCreater
                     value="Start Button"
                     onClick={this.handleClick}

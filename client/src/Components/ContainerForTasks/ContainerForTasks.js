@@ -1,10 +1,6 @@
 import React from "react";
-<<<<<<< HEAD:client/src/Components/ContainerForTasks/ContainerForTasks.js
 import CardCreaterBasedOnType from "../CardTypeForTasks/CardTypeForTasks"
 
-=======
-import CardCreaterBasedOnType from "./CardTypeForTasks"
->>>>>>> master:client/src/Components/ContainerForTasks.js
 let taskStatusArray = ["open", "pending", "closed"];
 
 function ContainerForTasks() {
@@ -18,7 +14,6 @@ function ContainerForTasks() {
                     indexNum={index}
                     taskStatus={item}
                     />
-
                     </div>
                 </div>
             </div>
