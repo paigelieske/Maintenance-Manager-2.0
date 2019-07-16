@@ -1,12 +1,11 @@
 import React from "react";
-import CardCreaterBasedOnType from "./CardTypeForTasks"
+import CardCreaterBasedOnType from "../CardTypeForTasks/CardTypeForTasks"
 let taskStatusArray = ["open", "pending", "closed"];
 
 class ContainerForTasks extends React.Component {
     state = {
 
     }
-
 
     render() {
         return (
@@ -15,16 +14,16 @@ class ContainerForTasks extends React.Component {
                     <div id={"container" + index + "Card"} className='card'>
                         <div id={item} className='card-body'>
                             <CardCreaterBasedOnType
-                                taskbuttons={this.state.array}
-                                id={this.state.array.id}
-                                status={this.state.array.status}
-                                zone={this.state.array.zone}
-                                department={this.state.array.department}
-                                room={this.state.array.room}
-                                problem={this.state.array.problem}
-                                severity={this.state.array.severity}
-                                note={this.state.array.note}
-                                createdDate={this.state.array.created}
+                                // taskbuttons={this.state.array}
+                                // id={this.state.array.id}
+                                // status={this.state.array.status}
+                                // zone={this.state.array.zone}
+                                // department={this.state.array.department}
+                                // room={this.state.array.room}
+                                // problem={this.state.array.problem}
+                                // severity={this.state.array.severity}
+                                // note={this.state.array.note}
+                                // createdDate={this.state.array.created}
                                 indexNum={index}
                                 taskStatus={item}
                             />
@@ -36,6 +35,5 @@ class ContainerForTasks extends React.Component {
         )
     }
 }
-
 
 export default ContainerForTasks;
