@@ -4,8 +4,7 @@ function CardCreaterBasedOnType(props) {
 	if (props.taskStatus === 'open') {
 		return (
 			<React.Fragment>
-				<h5>Open Tasks</h5>
-				<p>These Tasks have been recieved but not started</p>
+				<h5>Open</h5>
 				<div
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"
@@ -25,8 +24,7 @@ function CardCreaterBasedOnType(props) {
 	} else if (props.taskStatus === 'pending') {
 		return (
 			<React.Fragment>
-				<h5>Pending Tasks</h5>
-				<p>These Tasks have been recieved and have been started</p>
+				<h5>Pending</h5>
 				<div
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"
@@ -46,8 +44,8 @@ function CardCreaterBasedOnType(props) {
 	} else if (props.taskStatus === 'closed') {
 		return (
 			<React.Fragment>
-				<h5>Completed Tasks</h5>
-				<p>These tasks have been resolved</p>
+				<h5>Completed</h5>
+				
 				<div
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"

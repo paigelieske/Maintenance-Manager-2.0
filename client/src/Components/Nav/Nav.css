@@ -1,6 +1,5 @@
 nav {
-    max-width: 90%;
-    margin: auto;
+	height: 100px;
 }
 
 .bg-dark {
@@ -8,9 +7,23 @@ nav {
 }
 
 .navbar-brand {
+	text-align: center;
+	position: absolute;
+	top: 15px;
+	left: 100px;
+	margin:  0 auto;
 	content: url(./Logo.png);
-	float: left;
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .navbar-brand {
+	  width: 50%;
+	  left: 25%;
+	  right: 25%;
+  }
+}
+
 
 .navbar-nav .nav-link {
 	color: #1B3B66 !important;
@@ -21,4 +34,8 @@ nav {
 
 .navbar-nav {
 	float: right;
+}
+
+.navbar-toggler-icon {
+	display: none;
 }

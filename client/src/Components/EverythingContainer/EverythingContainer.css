@@ -2,12 +2,38 @@
 	max-width: 90%;
 	margin: auto;
 	text-align: center;
-	color: #1B3B66;
+	color: #1b3b66;
+}
+
+.card-body {
+	min-height: 400px;
+	min-width: 300px;
+}
+
+.card {
+	border-radius: 1em;
+}
+
+h5 {
+	margin-bottom: 20px;
+}
+
+#container0Div {
+}
+
+#container1div {
 	
 }
 
-.taskType, .taskDescription {
-	color: #1B3B66 !important;
+#container2div {
+	
+}
+
+
+
+.taskType,
+.taskDescription {
+	color: #1b3b66 !important;
 }
 
 .taskDescription {
@@ -16,7 +42,6 @@
 
 .box-container {
 	min-height: 200px;
-	
 }
 
 .box-item {
@@ -30,7 +55,7 @@
 
 #containeropen div {
 	animation-name: animateIn;
-	animation-duration: 250ms;
+	animation-duration: 500ms;
 	animation-fill-mode: both;
 	animation-timing-function: ease-in-out;
 }
@@ -77,7 +102,7 @@
 
 #containerpending div {
 	animation-name: animateIn;
-	animation-duration: 250ms;
+	animation-duration: 500ms;
 	animation-fill-mode: both;
 	animation-timing-function: ease-in-out;
 }
@@ -124,7 +149,7 @@
 
 #containerclosed div {
 	animation-name: animateIn;
-	animation-duration: 250ms;
+	animation-duration: 500ms;
 	animation-fill-mode: both;
 	animation-timing-function: ease-in-out;
 }
@@ -182,27 +207,37 @@
 
 /* Severity Color Scale */
 
-[id='1'], [id='1']:hover, [id='1']:active {
+[id='1'],
+[id='1']:hover,
+[id='1']:active {
 	background-color: #ffaaaa !important;
 	border-color: #ffaaaa !important;
 }
 
-[id='2'], [id='2']:hover, [id='2']:active {
+[id='2'],
+[id='2']:hover,
+[id='2']:active {
 	background-color: #ff5555;
 	border-color: #ff5555;
 }
 
-[id='3'], [id='3']:hover, [id='3']:active {
+[id='3'],
+[id='3']:hover,
+[id='3']:active {
 	background-color: #ff2a2a;
 	border-color: #ff2a2a;
 }
 
-[id='4'], [id='4']:hover, [id='4']:active {
+[id='4'],
+[id='4']:hover,
+[id='4']:active {
 	background-color: #aa0000;
 	border-color: #aa0000;
 }
 
-[id='5'], [id='5']:hover, [id='5']:active {
+[id='5'],
+[id='5']:hover,
+[id='5']:active {
 	background-color: #800000;
 	border-color: #800000;
 }
@@ -210,10 +245,11 @@
 /* New Task Button and Form */
 
 #newTask {
+	
 	margin: 50px auto;
 	text-align: center;
 	color: #ffffff;
-	background-color: #1B3B66;
+	background-color: #1b3b66;
 	border-radius: 1em;
 }
 
@@ -223,7 +259,7 @@
 
 form .btn {
 	color: #ffffff;
-	background-color: #1B3B66;
+	background-color: #1b3b66;
 	border-radius: 1em;
 }
 
@@ -234,18 +270,28 @@ form .btn:hover {
 input {
 	width: 20%;
 	margin: 20px auto;
-	background-color: #1B3B66;
+	background-color: #1b3b66;
 	border-radius: 1em;
 	min-height: 2em;
 	color: #ffffff;
 	border: none;
 }
 
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  input {
+	  width: fit-content;
+	  min-width: 20%;
+  }
+}
+
+
 input:hover {
 	background-color: #31313b;
 }
 
-input:focus, input:active {
+input:focus,
+input:active {
 	outline: 0;
 	background-color: #31313b;
 }
@@ -264,91 +310,128 @@ input:focus, input:active {
 	margin-top: 5px !important;
 }
 
-#problemNotes, #problemNotes:focus, #problemNotes:active {
+#problemNotes,
+#problemNotes:focus,
+#problemNotes:active {
 	background-color: #ffffff;
 }
 
 #submitNotes {
-	background-color: #1B3B66;
+	background-color: #1b3b66;
 	border-radius: 1em;
 	border: none;
 }
 
-#submitNotes:hover, #submitNotes:active, #submitNotes:focus {
+#submitNotes:hover,
+#submitNotes:active,
+#submitNotes:focus {
 	outline: none;
-	background-color: #31313b;	
+	background-color: #31313b;
 }
 
 #newTask {
 	width: 90%;
 }
 
-#newTask:active, #newTask:focus {
+#newTask:active,
+#newTask:focus {
 	background-color: #31313b;
 	outline: none;
 }
 
 /* Modal */
 
-.bg-modal {
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.7);
-	position: absolute;
-	top: 0;
-	z-index: 42;
-	display: none;
+
+
+
+
+
+.btn-primary {
+	background-color: #1b3b66;
+	border-radius: 1em;
+	border: none;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+	background-color: #31313b;
+}
+
+.passport-form {
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.modal-content {
-	width: 500px;
-	height: 300px;
-	background-color: #ffffff;
-	border-radius: 1em;
-	display: none;
-}
-
-.username {
-	text-align: center;
-	margin: auto;
-	margin-top: 40px;
-}
-
-.password {
-	text-align: center;
-	margin: 20px auto;
-}
-
 #username-form {
-	width: 300px;
-	margin-left: 20px;
 	background-color: #ffffff;
 	border: 1px solid #000000;
+	width: 300px;
+	margin-left: 20px;
 	color: #000000;
-	padding-left: 15px;
+	text-align: center;
 }
 
 #password-form {
+	background-color: #ffffff;
+	border: 1px solid #000000;
 	width: 300px;
 	margin-left: 20px;
-	background-color: #ffffff;
-	border: 1px solid black;
 	color: #000000;
-	padding-left: 15px;
-}
-
-#login-btn {
-	display: flex;
-	justify-content: center;
+	text-align: center;
 }
 
 #submit-form {
-	text-align: center;
-	margin: auto;
+	width: 100px;
 }
 
-#button-for-login {
-	display: none;
+.login-button {
+	position: absolute;
+	right: 100px;
+	top: 30px;
+	background-color: #1b3b66;
+	border-radius: 1em;
+	border: none;
+	min-width: 6%;
+}
+
+.signup-button {
+	position: absolute;
+	right: 200px;
+	top: 30px;
+	min-width: 6%;
+}
+
+.help-button {
+	position: absolute;
+	right: 300px;
+	top: 30px;
+	background-color: #ffffff;
+	color: #1b3b66;
+	border: 1px solid #1b3b66;
+	min-width: 6%;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+	.login-button, .signup-button, .help-button {
+		position: initial;
+		display: flex;
+		margin: 10px auto;
+	}
+
+	.help-button {
+		margin-bottom: 30px;
+	}
+
+}
+
+.help-button:active, .login-button:active, .signup-button:active, .help-button:focus, .login-button:focus, .signup-button:focus {
+	outline: 0;
+	background-color: #31313b;
+}
+
+.help-button:active, .help-button:focus {
+	background-color: #ffffff;
 }
