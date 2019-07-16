@@ -28,9 +28,6 @@ class NewTaskDivAndButtons extends React.Component {
         this.setState((state) => {
             state.newTask.notes = value
         })
-        this.setState(() => {
-            return this.state.values.splice(5, 1, value)
-        })
     }
 
     handleClick = (value) => {
@@ -38,10 +35,10 @@ class NewTaskDivAndButtons extends React.Component {
         if (value) {
             if (value === "Start Button") {
                 this.setState((state) => {
-                    return (state.currentButtons.splice(0, 1, ["EastZone", "WestZone"]) && state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, []) && state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, []))
+                    return (state.currentButtons.splice(0, 1, ["East Zone", "West Zone"]) && state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, []) && state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, []))
                 })
             }
-            else if (value === "EastZone") {
+            else if (value === "East Zone") {
                 this.setState((state) => {
                     state.newTask.zone = value
                 });
@@ -49,7 +46,7 @@ class NewTaskDivAndButtons extends React.Component {
                     return (state.currentButtons.splice(1, 1, ["Purchasing", "Accounting", "Other Rooms East"]) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, []) && state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, []))
                 })
             }
-            else if (value === "WestZone") {
+            else if (value === "West Zone") {
                 this.setState((state) => {
                     state.newTask.zone = value
                 });
@@ -117,13 +114,13 @@ class NewTaskDivAndButtons extends React.Component {
                 this.setState((state) => {
                     state.newTask.problem = value
                 })
-                        this.setState((state) => {
-                            return (state.currentButtons.splice(4, 1, ["1", "2", "3", "4", "5"]) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, []))
-                        })
+                this.setState((state) => {
+                    return (state.currentButtons.splice(4, 1, ["1", "2", "3", "4", "5"]) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, []))
+                })
             }
             else if (value === "1" || value === "2" || value === "3" || value === "4" || value === "5") {
                 this.setState((state) => {
-                    state.newTask.severity = value
+                    state.newTask.serverity = value
                 })
                 this.setState((state) => {
                     return state.currentButtons.splice(5, 1, ["Note"])
