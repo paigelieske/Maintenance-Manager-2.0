@@ -22,8 +22,9 @@ function Button(props) {
 						type="button"
 						className="btn btn-secondary text-center"
 						value="Submit Notes"
-						onClick={() => {
+						onClick={(event) => {
 							props.clickFunction(props.button);
+							props.handleSubmit(event)
 						}}
 					>
 						Submit Notes
