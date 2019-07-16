@@ -1,7 +1,24 @@
-const authRouter = require("express").Router();
-const userController = require("../controllers/userController");
+const errHandler = require("../config/errHandler");
 
-authRouter.route("/user")
-    .post(userController.create);
-
-module.exports = authRouter;
+module.exports = function (app, passport) {
+    //POST routes for login and signup
+    app.post("/login", passport.authenticate("local-login", {
+        successRedirect: "/",
+        failureRedirect: "/",
+        failureFlash: true
+    }));
+    app.post("/signup", passport.authenticate("local-signup", {
+        successRedirect: "/",
+        failureRedirect: "/",
+        failureFlash: true
+    }));
+    app.get("/logout", function (req, res) {
+        req.session.destroy(function (err) {
+            if (!err) {
+                res.redirect("/");
+            } else {
+                errHandler.handle(err);
+            }
+        });
+    });
+};
