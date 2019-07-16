@@ -367,7 +367,7 @@ input:active {
 #username-form {
 	background-color: #ffffff;
 	border: 1px solid #000000;
-	width: 300px;
+	width: 280px;
 	margin-left: 20px;
 	color: #000000;
 	text-align: center;
@@ -376,7 +376,7 @@ input:active {
 #password-form {
 	background-color: #ffffff;
 	border: 1px solid #000000;
-	width: 300px;
+	width: 280px;
 	margin-left: 20px;
 	color: #000000;
 	text-align: center;
@@ -435,3 +435,4 @@ input:active {
 .help-button:active, .help-button:focus {
 	background-color: #ffffff;
 }
+

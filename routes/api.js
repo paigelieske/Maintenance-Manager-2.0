@@ -7,7 +7,7 @@ apiRouter
   .post(tasksController.create);
 
 apiRouter
-  .route("api/tasks/:id")
+  .route("/api/tasks/:id")
   .get(tasksController.findById)
   .put(tasksController.update)
   .delete(tasksController.remove);
