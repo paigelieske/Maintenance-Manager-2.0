@@ -3,9 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserPage from './Pages/user'
 import NavBar from './Components/Nav/Nav'
 import Footer from './Components/Footer/Footer'
-import Admin from './Pages/admin'
-import './App.css';
-
 
 function App() {
   return (
@@ -16,7 +13,7 @@ function App() {
           <Route exact path="/" component={UserPage} />
           <Route exact path="/users" component={UserPage} />
           <Route exact path="/admin" component={UserPage} />
-          <Route component={Admin} />
+          <Route component={UserPage} />
         </Switch>
         <Footer />
       </Router>
