@@ -242,4 +242,4 @@ class NewTaskDivAndButtons extends React.Component {
     }
 }
 
-export default NewTaskDivAndButtons
+export default NewTaskDivAndButtons;

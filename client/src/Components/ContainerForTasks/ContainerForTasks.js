@@ -21,8 +21,4 @@ function ContainerForTasks() {
     )
 }
 
-
-
-
-
 export default ContainerForTasks;
