@@ -1,4 +1,5 @@
 import React from 'react';
+import NewTaskButton from "../NewTaskButton/NewTaskButton"
 
 function CardCreaterBasedOnType(props) {
 	if (props.taskStatus === 'open') {
@@ -10,19 +11,28 @@ function CardCreaterBasedOnType(props) {
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"
 				>
-					<div id="1" key={11} className="btn btn-danger box-item">
-						1
-					</div>
-					<div id="2" key={12} className="btn btn-danger box-item">
-						2
-					</div>
-					<div id="3" key={13} className="btn btn-danger box-item">
-						3
-					</div>
+					{/* {props.taskbuttons.map((task, index) => {
+                        if (props.status === props.taskStatus)
+                            return (
+                                <NewTaskButton
+                                    task={task}
+                                    id={props.id}
+                                    status={props.status}
+                                    zone={props.zone}
+                                    department={props.department}
+                                    room={props.room}
+                                    problem={props.problem}
+                                    severity={props.severity}
+                                    note={props.note}
+                                    createdDate={props.created}
+                                />
+                            )
+                    })} */}
 				</div>
 			</React.Fragment>
 		);
-	} else if (props.taskStatus === 'pending') {
+	} 
+	else if (props.taskStatus === 'pending') {
 		return (
 			<React.Fragment>
 				<h5>Pending Tasks</h5>
@@ -31,19 +41,28 @@ function CardCreaterBasedOnType(props) {
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"
 				>
-					<div id="11" key={14} className="btn btn-danger box-item">
-						11
-					</div>
-					<div id="21" key={15} className="btn btn-danger box-item">
-						21
-					</div>
-					<div id="31" key={16} className="btn btn-danger box-item">
-						31
-					</div>
+				{/* {props.taskbuttons.map((task, index) => {
+					if (props.status === props.taskStatus)
+						return (
+							<NewTaskButton
+								task={task}
+								id={props.id}
+								status={props.status}
+								zone={props.zone}
+								department={props.department}
+								room={props.room}
+								problem={props.problem}
+								severity={props.severity}
+								note={props.note}
+								createdDate={props.created}
+							/>
+						)
+				})} */}
 				</div>
 			</React.Fragment>
 		);
-	} else if (props.taskStatus === 'closed') {
+	} 
+	else if (props.taskStatus === 'closed') {
 		return (
 			<React.Fragment>
 				<h5>Completed Tasks</h5>
@@ -52,15 +71,23 @@ function CardCreaterBasedOnType(props) {
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"
 				>
-					<div id="111" key={17} className="btn btn-danger box-item">
-						111
-					</div>
-					<div id="211" key={18} className="btn btn-danger box-item">
-						211
-					</div>
-					<div id="311" key={19} className="btn btn-danger box-item">
-						311
-					</div>
+				{/* {props.taskbuttons.map((task, index) => {
+					if (props.status === props.taskStatus)
+						return (
+							<NewTaskButton
+								task={task}
+								id={props.id}
+								status={props.status}
+								zone={props.zone}
+								department={props.department}
+								room={props.room}
+								problem={props.problem}
+								severity={props.severity}
+								note={props.note}
+								createdDate={props.created}
+							/>
+						)
+				})} */}
 				</div>
 			</React.Fragment>
 		);

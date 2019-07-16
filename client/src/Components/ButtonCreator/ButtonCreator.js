@@ -6,15 +6,16 @@ function Button(props) {
 			<React.Fragment>
 				<div id="notesForm">
 					<label>
-						Please Specify Problem (i.e. The sink is leaking.
-						Max=150)
+						Please Specify Problem (i.e. The sink is leaking. Max=150)
 					</label>
 					<input
 						type="text"
 						id="problemNotes"
 						className="form-control text-center"
 						placeholder="Example input"
-						onChange={props.onChange}
+						onChange={
+							props.onChange
+						}
 					/>
 					<button
 						id="submitNotes"
@@ -31,9 +32,15 @@ function Button(props) {
 				</div>
 			</React.Fragment>
 		);
-	} else if (props.button === 'Task has been submitted') {
-		return <div>{props.button}</div>;
-	} else {
+	} 
+	else if (props.button === 'Task has been submitted') {
+		return ( 
+		<div>
+		{props.button}
+		</div>
+		)
+	} 
+	else {
 		return (
 			<input
 				type="button"
