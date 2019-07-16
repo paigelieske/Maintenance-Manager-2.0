@@ -8,10 +8,7 @@ function Row(props) {
                 <Button 
                 button={button} 
                 clickFunction={props.clickfunction}
-<<<<<<< HEAD:client/src/Components/Row.js
                 handleSubmit={props.handleSubmit}
-=======
->>>>>>> master:client/src/Components/Row/Row.js
                 onChange={props.onChange}
                 />
              ))}

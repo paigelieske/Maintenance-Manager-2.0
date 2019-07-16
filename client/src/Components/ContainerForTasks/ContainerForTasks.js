@@ -1,14 +1,5 @@
 import React from "react";
-<<<<<<< HEAD:client/src/Components/ContainerForTasks.js
-import CardCreaterBasedOnType from "./CardTypeForTasks"
-=======
-<<<<<<< HEAD:client/src/Components/ContainerForTasks/ContainerForTasks.js
 import CardCreaterBasedOnType from "../CardTypeForTasks/CardTypeForTasks"
-
-=======
-import CardCreaterBasedOnType from "./CardTypeForTasks"
->>>>>>> master:client/src/Components/ContainerForTasks.js
->>>>>>> master:client/src/Components/ContainerForTasks/ContainerForTasks.js
 let taskStatusArray = ["open", "pending", "closed"];
 
 function ContainerForTasks() {

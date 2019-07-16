@@ -1,26 +1,16 @@
 import React from "react";
-<<<<<<< HEAD:client/src/Components/NewTaskDivAndButtons.js
-import StartButtonCreater from './StartButton'
-import Row from './Row'
-import API from "../utils/API";
-=======
 import StartButtonCreater from '../StartButton/StartButton';
 import Row from '../Row/Row';
 import "../EverythingContainer/EverythingContainer.css";
-
-let newTask = {};
->>>>>>> master:client/src/Components/NewTaskDivAndButtons/NewTaskDivAndButtons.js
+import API from "../../utils/API";
 
 class NewTaskDivAndButtons extends React.Component {
     state = {
         newTask : {},
         values: [],
-        currentButtons: [[], [], [], [], [], []],
-        newTask: {},
-        tasks: []
+        currentButtons: [[], [], [], [], [], []]
     }
 
-<<<<<<< HEAD:client/src/Components/NewTaskDivAndButtons.js
     // componentDidMount() {
     //     this.loadTasks();
     // }
@@ -52,17 +42,6 @@ class NewTaskDivAndButtons extends React.Component {
                 })
             }
             else if (value === "EastZone") {
-=======
-    handleClick = (value) => {
-        if (value) {
-            if (value === "Start Button") {
-                this.setState((state) => {
-                    return (state.currentButtons.splice(0, 1, ["East Zone", "West Zone"]) &&state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, [])&& state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, [])) 
-                })
-            }
-            else if (value === "East Zone") {
-                newTask["zone"] = (value)
->>>>>>> master:client/src/Components/NewTaskDivAndButtons/NewTaskDivAndButtons.js
                 this.setState((state) => {
                     state.newTask.zone = value
                 });
@@ -74,15 +53,10 @@ class NewTaskDivAndButtons extends React.Component {
                             return (state.currentButtons.splice(1, 1, ["Purchasing", "Accounting", "Other Rooms East"]) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, []) && state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, []))
                         }))
             }
-<<<<<<< HEAD:client/src/Components/NewTaskDivAndButtons.js
             else if (value === "WestZone") {
                 this.setState((state) => {
                     state.newTask.zone = value
                 });
-=======
-            else if (value === "West Zone") {
-                newTask["zone"] = (value)
->>>>>>> master:client/src/Components/NewTaskDivAndButtons/NewTaskDivAndButtons.js
                 this.setState((state) => {
                     return state.values.splice(0, 1, value)
                 },
@@ -140,13 +114,9 @@ class NewTaskDivAndButtons extends React.Component {
                         }))
             }
             else if (value === "Personal Office" || value === "Cubicle Area" || value === "Lobby or Reception") {
-<<<<<<< HEAD:client/src/Components/NewTaskDivAndButtons.js
                 this.setState((state) => {
                     state.newTask.room = value
                 })
-=======
-                newTask["room"] = (value)
->>>>>>> master:client/src/Components/NewTaskDivAndButtons/NewTaskDivAndButtons.js
                 this.setState((state) => {
                     return state.values.splice(2, 1, value)
                 },
@@ -193,11 +163,7 @@ class NewTaskDivAndButtons extends React.Component {
             }
             else if (value === "1" || value === "2" || value === "3" || value === "4" || value === "5") {
                 this.setState((state) => {
-<<<<<<< HEAD:client/src/Components/NewTaskDivAndButtons.js
                     state.newTask.severity = value
-=======
-                    state.newTask.serverity = value
->>>>>>> master:client/src/Components/NewTaskDivAndButtons/NewTaskDivAndButtons.js
                 })
                 this.setState((state) => {
                     return state.values.splice(4, 1, value)
@@ -213,11 +179,7 @@ class NewTaskDivAndButtons extends React.Component {
                 },
                     () =>
                         this.setState((state) => {
-<<<<<<< HEAD:client/src/Components/NewTaskDivAndButtons.js
                             return (state.currentButtons.splice(0, 1, []) && state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, []) && state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, ["Task has been submitted"]))
-=======
-                            return ( state.currentButtons.splice(0, 1, []) && state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, [])&& state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, ["Task has been submitted"] ))
->>>>>>> master:client/src/Components/NewTaskDivAndButtons/NewTaskDivAndButtons.js
                         }))
             }
             else {
@@ -225,7 +187,6 @@ class NewTaskDivAndButtons extends React.Component {
             }
         }
         // console.log(this.state.newTask)    
-<<<<<<< HEAD:client/src/Components/NewTaskDivAndButtons.js
     }
 
     handleSubmit = event => {
@@ -243,6 +204,7 @@ class NewTaskDivAndButtons extends React.Component {
             .catch(err => console.log(err));
     }
 
+
     emailTask = () => {
         API.emailTask({
             zone: this.state.newTask.zone,
@@ -254,13 +216,14 @@ class NewTaskDivAndButtons extends React.Component {
         })
         .then(res => console.log("email res" + res))
         .catch(err => console.log(err));
-=======
->>>>>>> master:client/src/Components/NewTaskDivAndButtons/NewTaskDivAndButtons.js
     }
 
     render() {
         return (
             <React.Fragment>
+                <div className="breadCrumbs">{Object.values(this.state.newTask).map((crumb, index) => (
+                    index < 4 ? crumb + " > " : crumb))}
+                </div>
                 <StartButtonCreater
                     value="Start Button"
                     onClick={this.handleClick}
@@ -270,10 +233,7 @@ class NewTaskDivAndButtons extends React.Component {
                     return <Row
                         buttons={row}
                         clickfunction={this.handleClick}
-<<<<<<< HEAD:client/src/Components/NewTaskDivAndButtons.js
                         handleSubmit={this.handleSubmit}
-=======
->>>>>>> master:client/src/Components/NewTaskDivAndButtons/NewTaskDivAndButtons.js
                         onChange={this.handleChange}
                     ></Row>
                 })}

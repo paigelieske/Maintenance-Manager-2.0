@@ -17,11 +17,11 @@ emailRoute.route("/sendemail")
       <ul>
     `
         let transporter = nodemailer.createTransport({
-            host: "smtp.comcast.net",
+            host: "smtp.gmail.com",
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-                user: "paigeproctor@comcast.net",
+                user: "gtmaintenanceman@gmail.com",
                 pass: EMAIL_PASS
             },
             tls: {
