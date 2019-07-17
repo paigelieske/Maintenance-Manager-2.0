@@ -35,9 +35,9 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.6.4",
     "nodemailer": "^6.3.0",
+    "react-beautiful-dnd": "^11.0.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "react-beautiful-dnd": "^11.0.4",
     "react-bootstrap": "^1.0.0-beta.9",
     "react-bootstrap-modal": "^4.2.0"
   },
