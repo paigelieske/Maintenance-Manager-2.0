@@ -5,26 +5,21 @@ function Button(props) {
 		return (
 			<React.Fragment>
 				<div id="notesForm">
-					<label>
-						Please Specify Problem (i.e. The sink is leaking. Max=150)
-					</label>
 					<input
 						type="text"
 						id="problemNotes"
 						className="form-control text-center"
-						placeholder="Example input"
-						onChange={
-							props.onChange
-						}
+						placeholder="Please Specify Problem (i.e. The sink is leaking)"
+						onChange={props.onChange}
 					/>
 					<button
 						id="submitNotes"
 						type="button"
 						className="btn btn-secondary text-center"
 						value="Submit Notes"
-						onClick={(event) => {
+						onClick={event => {
 							props.clickFunction(props.button);
-							props.handleSubmit(event)
+							props.handleSubmit(event);
 						}}
 					>
 						Submit Notes
