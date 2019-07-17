@@ -18,8 +18,7 @@ function MyVerticallyCenteredModal(props) {
 			</Modal.Header>
 			<Modal.Body>
 				<form
-					action="/login"
-					method="post"
+					method="POST"
 					className="passport-form"
 				>
 					<div className="username">
@@ -43,6 +42,7 @@ function MyVerticallyCenteredModal(props) {
 							type="submit"
 							value="Register"
 							id="submit-form"
+							formaction="/signup"
 						/>
 					</div>
 				</form>

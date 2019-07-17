@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //passport, session, and flash middleware for authentication, persistent login, and error-handling
-app.use(session({ secret: process.env.secret || "temporary secret" }));
+app.use(session({ secret: process.env.secret || "temporary secret", resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
