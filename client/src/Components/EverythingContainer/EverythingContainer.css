@@ -18,16 +18,7 @@ h5 {
 	margin-bottom: 20px;
 }
 
-#container0Div {
-}
 
-#container1div {
-	
-}
-
-#container2div {
-	
-}
 
 
 
@@ -245,12 +236,13 @@ h5 {
 /* New Task Button and Form */
 
 #newTask {
-	
 	margin: 50px auto;
 	text-align: center;
 	color: #ffffff;
 	background-color: #1b3b66;
 	border-radius: 1em;
+	content: "";
+    display: block;
 }
 
 #newTask:hover {
@@ -421,6 +413,10 @@ input:active {
 		margin: 10px auto;
 	}
 
+	.login-button {
+		margin-top: 40px;
+	}
+
 	.help-button {
 		margin-bottom: 30px;
 	}
@@ -435,4 +431,3 @@ input:active {
 .help-button:active, .help-button:focus {
 	background-color: #ffffff;
 }
-
