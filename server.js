@@ -16,6 +16,10 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+;}
+
 //passport, session, and flash middleware for authentication, persistent login, and error-handling
 app.use(session({ secret: process.env.secret || "temporary secret" }));
 app.use(passport.initialize());
@@ -31,10 +35,10 @@ require("./routes/authRoutes")(app, passport);
 require("./config/passport")(passport, db.User);
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/maintenancemanager",
-    { useNewUrlParser: true }
-  );
+  process.env.MONGODB_URI || "mongodb://localhost/maintenancemanager",
+  { useNewUrlParser: true }
+);
 
 app.listen(PORT, () => {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
