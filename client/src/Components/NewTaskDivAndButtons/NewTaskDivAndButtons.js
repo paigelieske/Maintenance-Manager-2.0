@@ -8,19 +8,19 @@ class NewTaskDivAndButtons extends React.Component {
     state = {
         newTask : {},
         values: [],
-        currentButtons: [[], [], [], [], [], []]
+        currentButtons: [[], [], [], [], [], []],
+        tasks: []
     }
 
-    // componentDidMount() {
-    //     this.loadTasks();
-    // }
-
-    // loadTasks = () => {
-    //     API.getTasks()
-    //         .then(res =>
-    //             this.setState({ tasks: res.data }))
-    //         .catch(err => console.log(err));
-    // };
+    loadTasks = () => {
+        API.getTasks()
+            .then(res => {
+                this.setState({ tasks: res.data });
+                console.log(this.state.tasks);
+                this.emailTask()
+            })
+            .catch(err => console.log(err));
+    };
 
     handleChange = event => {
         console.log(this.state.newTask)
@@ -200,7 +200,7 @@ class NewTaskDivAndButtons extends React.Component {
             severity: this.state.newTask.severity,
             note: this.state.newTask.notes
         })
-            .then(res => this.emailTask())
+            .then(res => this.loadTasks())
             .catch(err => console.log(err));
     }
 
@@ -214,7 +214,7 @@ class NewTaskDivAndButtons extends React.Component {
             severity: this.state.newTask.severity,
             note: this.state.newTask.notes
         })
-        .then(res => console.log("email res" + res))
+        .then(res => console.log("email res"))
         .catch(err => console.log(err));
     }
 
