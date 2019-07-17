@@ -222,7 +222,7 @@ class NewTaskDivAndButtons extends React.Component {
         return (
             <React.Fragment>
                 <div className="col-lg-12 breadCrumbsDisplay">{Object.values(this.state.newTask).map((crumb, index) => (
-                    index < 4 ? crumb + " > " : crumb))}
+					index < 5 ? crumb + " > " : crumb))}
                 </div>
                 <StartButtonCreater
                     value="Start Button"
