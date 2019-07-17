@@ -231,6 +231,7 @@ class NewTaskDivAndButtons extends React.Component {
                 </StartButtonCreater>
                 {this.state.currentButtons.map((row, index) => {
                     return <Row
+                        key={index}
                         buttons={row}
                         clickfunction={this.handleClick}
                         handleSubmit={this.handleSubmit}

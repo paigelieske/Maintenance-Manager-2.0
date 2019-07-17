@@ -6,6 +6,7 @@ function Row(props) {
         <div className="row col-sm-12" id={10}>
             {props.buttons.map((button, index) => (
                 <Button 
+                key={index}
                 button={button} 
                 clickFunction={props.clickfunction}
                 handleSubmit={props.handleSubmit}

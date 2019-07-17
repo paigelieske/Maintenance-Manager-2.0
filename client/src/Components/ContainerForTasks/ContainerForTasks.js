@@ -24,8 +24,8 @@ class ContainerForTasks extends React.Component {
     render() {
         return (
             this.state.taskStatusArray.map((item, index) => (
-                <div id={"container" + index + "Div"} className="col-sm-4">
-                    <div id={"container" + index + "Card"} className='card'>
+                <div key={"container" + index + "Div"} className="col-sm-4">
+                    <div key={"container" + index + "Card"} className='card'>
                         <div id={item} className='card-body'>
                             <CardCreaterBasedOnType
                                 // taskbuttons={this.state.array}
