@@ -1,5 +1,5 @@
 import React from 'react';
-// import NewTaskButton from "../NewTaskButton/NewTaskButton"
+import NewTaskButton from "../NewTaskButton/NewTaskButton"
 import { Draggable, Droppable } from 'react-drag-and-drop'
 
 function CardCreaterBasedOnType(props) {
@@ -19,7 +19,17 @@ function CardCreaterBasedOnType(props) {
 							<ul>
 								{props.open.map((task, index) => (
 									<Draggable type="problem" data={task}>
-										< li > {task} </li>
+										<NewTaskButton
+											key={task[7]}
+											id={task[8]}
+											zone={task[0]}
+											department={task[1]}
+											room={task[2]}
+											problem={task[3]}
+											severity={task[4]}
+											notes={task[5]}
+											createdDate={task[6]}
+										/>
 									</Draggable>
 								))}
 							</ul>
@@ -62,7 +72,17 @@ function CardCreaterBasedOnType(props) {
 							<ul>
 								{props.pending.map((task, index) => (
 									<Draggable type="problem" data={task}>
-										< li > {task} </li>
+										<NewTaskButton
+											key={task[7]}
+											id={task[8]}
+											zone={task[0]}
+											department={task[1]}
+											room={task[2]}
+											problem={task[3]}
+											severity={task[4]}
+											notes={task[5]}
+											createdDate={task[6]}
+										/>
 									</Draggable>
 								))}
 							</ul>
@@ -106,7 +126,17 @@ function CardCreaterBasedOnType(props) {
 							<ul>
 								{props.closed.map((task, index) => (
 									<Draggable type="problem" data={task}>
-										< li > {task} </li>
+										<NewTaskButton
+											key={task[7]}
+											id={task[8]}
+											zone={task[0]}
+											department={task[1]}
+											room={task[2]}
+											problem={task[3]}
+											severity={task[4]}
+											notes={task[5]}
+											createdDate={task[6]}
+										/>
 									</Draggable>
 								))}
 							</ul>

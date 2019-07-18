@@ -18,26 +18,23 @@ class ContainerForTasks extends React.Component {
     loadTasks = () => {
         API.getTasks()
             .then(res => {
-                console.log(res.data)
-
                 for (let i = 0; i < res.data.length; i++) {
                     if (res.data[i].status === 'open') {
                         let task = res.data[i]
                         this.setState((state) => {
-                            console.log(task)
-                            this.state.open.push(task.zone + " > " + task.department + " > " + task.room + " > " + task.problem + " > " + task.severity + " > " + task.note + " > " + task.created)
+                            this.state.open.push([task.zone, task.department, task.room, task.problem, task.severity, task.note, task.created, task.id, task.status])
                         })
                     }
                     else if (res.data[i].status === 'pending') {
                         let task = res.data[i]
                         this.setState((state) => {
-                            this.state.pending.push(task.zone + " > " + task.department + " > " + task.room + " > " + task.problem + " > " + task.severity + " > " + task.note + " > " + task.created)
+                            this.state.pending.push([task.zone, task.department, task.room, task.problem, task.severity, task.note, task.created, task.id, task.status])
                         })
                     }
                     else if (res.data[i].status === 'closed') {
                         let task = res.data[i]
                         this.setState((state) => {
-                            this.state.closed.push(task.zone + " > " + task.department + " > " + task.room + " > " + task.problem + " > " + task.severity + " > " + task.note + " > " + task.created)
+                            this.state.closed.push([task.zone, task.department, task.room, task.problem, task.severity, task.note, task.created, task.id, task.status])
                         })
                     }
                     this.setState({ tasks: res.data })
@@ -50,13 +47,10 @@ class ContainerForTasks extends React.Component {
     onDrop(data) {
         API.getTasks()
             .then(res => {
-                console.log(res.data)
                 for (let i = 0; i < res.data.length; i++) {
                     if (res.data[i].status === 'open') {
                         let task = res.data[i]
                         if (task.status === "open") {
-                            console.log(this.state.open)
-                            console.log(Object.values(data)[0])
                             this.state.open.push(Object.values(data)[0])
 
                         }
