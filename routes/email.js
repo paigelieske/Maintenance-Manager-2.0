@@ -1,6 +1,7 @@
 const emailRoute = require("express").Router();
 const nodemailer = require("nodemailer");
 const EMAIL_PASS = process.env.EMAIL_PASS;
+const EMAIL_USER = process.env.EMAIL_USER;
 
 emailRoute.route("/sendemail")
     .post((req, res) => {
@@ -17,11 +18,11 @@ emailRoute.route("/sendemail")
       <ul>
     `
         let transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
+            host: "smtp.comcast.net",
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-                user: "gtmaintenanceman@gmail.com",
+                user: EMAIL_USER,
                 pass: EMAIL_PASS
             },
             tls: {
