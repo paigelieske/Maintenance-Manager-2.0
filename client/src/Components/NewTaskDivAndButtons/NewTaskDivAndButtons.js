@@ -216,6 +216,7 @@ class NewTaskDivAndButtons extends React.Component {
         })
         .then(res => console.log("email res"))
         .catch(err => console.log(err));
+        window.location.reload();
     }
 
     render() {
