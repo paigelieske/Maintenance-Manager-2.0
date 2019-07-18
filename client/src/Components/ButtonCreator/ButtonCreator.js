@@ -24,7 +24,7 @@ function Button(props) {
 						value="Submit Notes"
 						onClick={(event) => {
 							props.clickFunction(props.button);
-							props.handleSubmit(event)
+							props.handleSubmit(event);
 						}}
 					>
 						Submit Notes

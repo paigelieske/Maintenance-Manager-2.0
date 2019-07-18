@@ -3,24 +3,29 @@ import StartButtonCreater from '../StartButton/StartButton';
 import Row from '../Row/Row';
 import "../EverythingContainer/EverythingContainer.css";
 import API from "../../utils/API";
+import CardCreaterBasedOnType from "../CardTypeForTasks/CardTypeForTasks"
+import ContainerForTasks from "../ContainerForTasks/ContainerForTasks"
 
 class NewTaskDivAndButtons extends React.Component {
     state = {
-        newTask : {},
+        newTask: {},
         values: [],
         currentButtons: [[], [], [], [], [], []]
     }
 
     // componentDidMount() {
-    //     this.loadTasks();
+    //     this.loadTasks()
     // }
 
-    // loadTasks = () => {
-    //     API.getTasks()
-    //         .then(res =>
-    //             this.setState({ tasks: res.data }))
-    //         .catch(err => console.log(err));
-    // };
+    loadTasks = () => {
+        API.getTasks()
+            .then(res => {
+                this.setState({ tasks: res.data });
+                console.log(this.state.tasks);
+                this.emailTask()
+            })
+            .catch(err => console.log(err));
+    };
 
     handleChange = event => {
         console.log(this.state.newTask)
@@ -200,7 +205,7 @@ class NewTaskDivAndButtons extends React.Component {
             severity: this.state.newTask.severity,
             note: this.state.newTask.notes
         })
-            .then(res => this.emailTask())
+            .then(res => this.loadTasks())
             .catch(err => console.log(err));
     }
 
@@ -214,8 +219,9 @@ class NewTaskDivAndButtons extends React.Component {
             severity: this.state.newTask.severity,
             note: this.state.newTask.notes
         })
-        .then(res => console.log("email res" + res))
-        .catch(err => console.log(err));
+            .then(res => console.log("email res" + res))
+            .catch(err => console.log(err));
+            window.location.reload()
     }
 
     render() {

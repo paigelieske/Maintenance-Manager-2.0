@@ -1,45 +1,74 @@
 import React from 'react';
-import NewTaskButton from "../NewTaskButton/NewTaskButton"
+// import NewTaskButton from "../NewTaskButton/NewTaskButton"
+import { Draggable, Droppable } from 'react-drag-and-drop'
 
 function CardCreaterBasedOnType(props) {
 	if (props.taskStatus === 'open') {
 		return (
 			<React.Fragment>
-				<h5>Open</h5>
+				<h5>Open Tasks</h5>
+				<p>These Tasks have been recieved but not started</p>
 				<div
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"
 				>
+					<React.Fragment>
+						<Droppable
+							types={['problem']} // <= allowed drop types
+							onDrop={props.onDrop.bind(this)}>
+							<ul>
+								{props.open.map((task, index) => (
+									<Draggable type="problem" data={task}>
+										< li > {task} </li>
+									</Draggable>
+								))}
+							</ul>
+						</Droppable>
+					</React.Fragment>
 					{/* {props.taskbuttons.map((task, index) => {
-                        if (props.status === props.taskStatus)
+                        if (props.status === 'open')
                             return (
                                 <NewTaskButton
                                     task={task}
-                                    id={props.id}
-                                    status={props.status}
-                                    zone={props.zone}
-                                    department={props.department}
-                                    room={props.room}
-                                    problem={props.problem}
-                                    severity={props.severity}
-                                    note={props.note}
-                                    createdDate={props.created}
+                                    id={props.taskbuttons.id}
+                                    status={props.taskbuttons.status}
+                                    zone={props.taskbuttons.zone}
+                                    department={props.taskbuttons.department}
+                                    room={props.taskbuttons.room}
+                                    problem={props.taskbuttons.problem}
+                                    severity={props.taskbuttons.severity}
+                                    note={props.taskbuttons.note}
+                                    createdDate={props.taskbuttons.created}
                                 />
                             )
                     })} */}
 				</div>
 			</React.Fragment>
 		);
-	} 
+	}
 	else if (props.taskStatus === 'pending') {
 		return (
 			<React.Fragment>
-				<h5>Pending</h5>
+				<h5>Pending Tasks</h5>
+				<p>These Tasks have been recieved and have been started</p>
 				<div
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"
 				>
-				{/* {props.taskbuttons.map((task, index) => {
+					<React.Fragment>
+						<Droppable
+							types={['problem']} // <= allowed drop types
+							onDrop={props.onDrop.bind(this)}>
+							<ul>
+								{props.pending.map((task, index) => (
+									<Draggable type="problem" data={task}>
+										< li > {task} </li>
+									</Draggable>
+								))}
+							</ul>
+						</Droppable>
+					</React.Fragment>
+					{/* {props.taskbuttons.map((task, index) => {
 					if (props.status === props.taskStatus)
 						return (
 							<NewTaskButton
@@ -59,17 +88,31 @@ function CardCreaterBasedOnType(props) {
 				</div>
 			</React.Fragment>
 		);
-	} 
+	}
 	else if (props.taskStatus === 'closed') {
 		return (
 			<React.Fragment>
-				<h5>Completed</h5>
-				
+				<h5>Completed Tasks</h5>
+				<p>These tasks have been resolved</p>
 				<div
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"
 				>
-				{/* {props.taskbuttons.map((task, index) => {
+
+					<React.Fragment>
+						<Droppable
+							types={['problem']} // <= allowed drop types
+							onDrop={props.onDrop.bind(this)}>
+							<ul>
+								{props.closed.map((task, index) => (
+									<Draggable type="problem" data={task}>
+										< li > {task} </li>
+									</Draggable>
+								))}
+							</ul>
+						</Droppable>
+					</React.Fragment>
+					{/* {props.taskbuttons.map((task, index) => {
 					if (props.status === props.taskStatus)
 						return (
 							<NewTaskButton
