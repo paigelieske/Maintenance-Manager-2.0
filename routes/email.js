@@ -1,6 +1,7 @@
 const emailRoute = require("express").Router();
 const nodemailer = require("nodemailer");
 const EMAIL_PASS = process.env.EMAIL_PASS;
+const EMAIL_USER = process.env.EMAIL_USER;
 
 emailRoute.route("/sendemail")
     .post((req, res) => {
