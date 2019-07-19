@@ -13,6 +13,7 @@
 	border-radius: 1em;
 }
 
+
 h5 {
 	margin-bottom: 15px;
 }
@@ -43,6 +44,7 @@ h5 {
 	margin-bottom: 5px;
 	border-radius: 1em;
 	padding: 4px;
+	max-width: 100% !important;
 }
 
 html {
@@ -492,6 +494,7 @@ input:active {
 }
 
 .modal-content {
+	border-radius: 1em;
 	box-shadow: 10px 10px 5px grey;
 	color: #1b3b66;
 }
@@ -524,4 +527,26 @@ input:active {
 
 .card-body {
 	min-width: 100%;
+}
+
+.time-hide .box-item time {
+	display: none;
+}
+
+.time-hide .box-item {
+	background-color: #408915 !important;
+	border-color: #408915 !important;
+}
+
+
+#container0Div, #container1Div, #container2Div {
+	margin-bottom: 50px !important;
+}
+
+#notes-ital {
+	font-style: italic;
+}
+
+#notes-ital:empty {
+	display: none;
 }

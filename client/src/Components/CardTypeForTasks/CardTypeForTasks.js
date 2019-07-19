@@ -72,7 +72,7 @@ function CardCreaterBasedOnType(props) {
 				>
 					<React.Fragment>
 						{props.closed.map((task, index) => (
-							<Draggable type="problem" data={task}>
+							<Draggable class="time-hide" type="problem" data={task}>
 								<NewTaskButton
 									key={task[7]}
 									id={task[8]}

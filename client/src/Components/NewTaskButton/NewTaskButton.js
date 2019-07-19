@@ -14,7 +14,7 @@ function NewTaskButton(props) {
 			</div>
 			<div>{props.problem + ' problem in ' + props.room}</div>
 			<div>{props.zone + ' ' + props.department}</div>
-			<div>{' Notes: "' + props.notes + '"'}</div>
+			<div id="notes-ital">{'"' + props.notes + '"'}</div>
 		</div>
 	);
 }
