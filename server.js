@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 ;}
 
 //passport, session, and flash middleware for authentication, persistent login, and error-handling
-app.use(session({ secret: process.env.secret || "temporary secret" }));
+app.use(session({ secret: process.env.secret || "temporary secret", resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
