@@ -1,6 +1,6 @@
 import React from 'react';
 import NewTaskButton from "../NewTaskButton/NewTaskButton"
-import { Draggable, Droppable } from 'react-drag-and-drop'
+import { Draggable } from 'react-drag-and-drop'
 
 function CardCreaterBasedOnType(props) {
 	if (props.taskStatus === 'open') {
@@ -13,13 +13,9 @@ function CardCreaterBasedOnType(props) {
 					className="panel-body box-container"
 				>
 					<React.Fragment>
-						<Droppable
-							types={['problem']} // <= allowed drop types
-							onDrop={props.onDrop.bind(this)}>
-							<ul>
 								{props.open.map((task, index) => (
-									<Draggable type="problem" data={task}>
-										<NewTaskButton
+                                <Draggable type="problem" data={task}>
+								<NewTaskButton
 											key={task[7]}
 											id={task[8]}
 											zone={task[0]}
@@ -32,26 +28,7 @@ function CardCreaterBasedOnType(props) {
 										/>
 									</Draggable>
 								))}
-							</ul>
-						</Droppable>
 					</React.Fragment>
-					{/* {props.taskbuttons.map((task, index) => {
-                        if (props.status === 'open')
-                            return (
-                                <NewTaskButton
-                                    task={task}
-                                    id={props.taskbuttons.id}
-                                    status={props.taskbuttons.status}
-                                    zone={props.taskbuttons.zone}
-                                    department={props.taskbuttons.department}
-                                    room={props.taskbuttons.room}
-                                    problem={props.taskbuttons.problem}
-                                    severity={props.taskbuttons.severity}
-                                    note={props.taskbuttons.note}
-                                    createdDate={props.taskbuttons.created}
-                                />
-                            )
-                    })} */}
 				</div>
 			</React.Fragment>
 		);
@@ -66,12 +43,8 @@ function CardCreaterBasedOnType(props) {
 					className="panel-body box-container"
 				>
 					<React.Fragment>
-						<Droppable
-							types={['problem']} // <= allowed drop types
-							onDrop={props.onDrop.bind(this)}>
-							<ul>
 								{props.pending.map((task, index) => (
-									<Draggable type="problem" data={task}>
+                                <Draggable type="problem" data={task}>
 										<NewTaskButton
 											key={task[7]}
 											id={task[8]}
@@ -85,26 +58,7 @@ function CardCreaterBasedOnType(props) {
 										/>
 									</Draggable>
 								))}
-							</ul>
-						</Droppable>
 					</React.Fragment>
-					{/* {props.taskbuttons.map((task, index) => {
-					if (props.status === props.taskStatus)
-						return (
-							<NewTaskButton
-								task={task}
-								id={props.id}
-								status={props.status}
-								zone={props.zone}
-								department={props.department}
-								room={props.room}
-								problem={props.problem}
-								severity={props.severity}
-								note={props.note}
-								createdDate={props.created}
-							/>
-						)
-				})} */}
 				</div>
 			</React.Fragment>
 		);
@@ -118,12 +72,7 @@ function CardCreaterBasedOnType(props) {
 					id={'container' + props.taskStatus}
 					className="panel-body box-container"
 				>
-
 					<React.Fragment>
-						<Droppable
-							types={['problem']} // <= allowed drop types
-							onDrop={props.onDrop.bind(this)}>
-							<ul>
 								{props.closed.map((task, index) => (
 									<Draggable type="problem" data={task}>
 										<NewTaskButton
@@ -139,26 +88,7 @@ function CardCreaterBasedOnType(props) {
 										/>
 									</Draggable>
 								))}
-							</ul>
-						</Droppable>
 					</React.Fragment>
-					{/* {props.taskbuttons.map((task, index) => {
-					if (props.status === props.taskStatus)
-						return (
-							<NewTaskButton
-								task={task}
-								id={props.id}
-								status={props.status}
-								zone={props.zone}
-								department={props.department}
-								room={props.room}
-								problem={props.problem}
-								severity={props.severity}
-								note={props.note}
-								createdDate={props.created}
-							/>
-						)
-				})} */}
 				</div>
 			</React.Fragment>
 		);

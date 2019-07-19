@@ -3,8 +3,6 @@ import StartButtonCreater from '../StartButton/StartButton';
 import Row from '../Row/Row';
 import "../EverythingContainer/EverythingContainer.css";
 import API from "../../utils/API";
-import CardCreaterBasedOnType from "../CardTypeForTasks/CardTypeForTasks"
-import ContainerForTasks from "../ContainerForTasks/ContainerForTasks"
 
 class NewTaskDivAndButtons extends React.Component {
     state = {
