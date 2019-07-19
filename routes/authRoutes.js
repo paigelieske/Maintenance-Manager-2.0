@@ -7,16 +7,17 @@ module.exports = function (app, passport) {
             console.log("passing onto strategy");
             return next();
         } else {
-            console.log("session is already logged in as: "+ req.user);
-            // return res.redirect('../client/components/SignIn');
+            console.log("session is already logged in as: " + req.user);
             return res.sendStatus(200);
         }
     }, passport.authenticate("local-login"),
         function (req, res) {
-            // console.log(err);
-            console.log(`this is the request: ${req.user}`);
-            console.log(`this is the request: ${res}`);
-            res.sendStatus(200);
+            if (req.user) {
+                res.json(req.user);
+            }
+            else {
+                res.sendStatus(401);
+            }
         }
     );
     app.post("/signup", passport.authenticate("local-signup", {

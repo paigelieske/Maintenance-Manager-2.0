@@ -83,7 +83,7 @@ module.exports = function (passport, User) {
                 }
                 //if correct user & password, user gets logged in
                 return done(null, user);
-                
+
                 //catch errors
             }).catch(function (err) {
                 console.log("Login Error: " + err);
@@ -101,7 +101,7 @@ module.exports = function (passport, User) {
     passport.deserializeUser(function (id, done) {
         User.findById(id).then(function (user) {
             if (user) {
-                done(null, user.get());
+                done(null, user);
             } else {
                 done(user.errors, null);
             }

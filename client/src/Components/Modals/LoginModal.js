@@ -7,7 +7,8 @@ import axios from 'axios';
 class MyVerticallyCenteredModal extends React.Component {
 	state = {
 		username: "",
-		password: ""
+		password: "",
+		error: ""
 	}
 
 	handleChange = event => {
@@ -26,12 +27,32 @@ class MyVerticallyCenteredModal extends React.Component {
 			password: this.state.password
 		})
 			.then(response=>{
-				console.log("200 response: "+response);
-				if(response.status===200){
+				console.log(response);
+				if(response.status===200 && response.data ==="OK"){
+					this.setState({ error: "User already logged in, please logout first!" }, ()=>{
+						setTimeout(()=>{
+							this.setState({ error: "" });
+						},6000)
+					});
+					
+				} 
+				else if (response.status===200 && response.data !=="OK"){
 					this.props.onHide();
+				}
+				else {
+					this.setState({ error: "Incorrect Username or Password!" }, ()=>{
+						setTimeout(()=>{
+							this.setState({ error: "" });
+						},6000)
+					});
 				}
 			})
 			.catch(error=>{
+				this.setState({ error: "Incorrect Username or Password!" }, ()=>{
+					setTimeout(()=>{
+						this.setState({ error: "" });
+					},6000)
+				});
 				console.error(error);
 			})
 	}
@@ -83,6 +104,7 @@ class MyVerticallyCenteredModal extends React.Component {
 								onClick={this.handleSubmit}
 							/>
 						</div>
+						{this.state.error ? <div className="login-error"><h4>{this.state.error}</h4></div> : null}
 					</form>
 				</Modal.Body>
 
