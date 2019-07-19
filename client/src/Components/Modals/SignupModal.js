@@ -3,11 +3,14 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import axios from 'axios';
+import "./modal.css";
 
 class MyVerticallyCenteredModal extends React.Component {
 	state = {
 		username: "",
-		password: ""
+		password: "",
+		success: "",
+		error: ""
 	}
 
 	handleChange = event => {
@@ -24,20 +27,36 @@ class MyVerticallyCenteredModal extends React.Component {
 		axios.post("/signup", {
 			username: this.state.username,
 			password: this.state.password
-		}, 
-		() => {
-			this.setState({
-				username: "",
-				password: ""
-			})
 		})
 			.then(response => {
-				if(response.status===200){
-					this.props.onHide();
+				console.log(response);
+				if (response.status === 200) {
+					this.setState({ success: "Registration Successful!" }, () => {
+						setTimeout(() => {
+							this.props.onHide();
+							this.setState({ success: "" });
+							this.setState({
+								username: "",
+								password: ""
+							})
+						}, 2000)
+					})
+				}
+				else {
+					this.setState({ error: "User exists or Bad request!" }, () => {
+						setTimeout(() => {
+							this.setState({ error: "" });
+						}, 5500)
+					});
 				}
 			})
 			.catch(error => {
 				console.error(error);
+				this.setState({ error: "User exists or Bad request!" }, () => {
+					setTimeout(() => {
+						this.setState({ error: "" });
+					}, 5500)
+				});
 			})
 	}
 
@@ -88,6 +107,8 @@ class MyVerticallyCenteredModal extends React.Component {
 							// formaction="/signup"
 							/>
 						</div>
+						{this.state.error ? <div className="login-error"><h6>{this.state.error}</h6></div> : null}
+						{this.state.success ? <div className="signup-success"><h6>{this.state.success}</h6></div> : null}
 					</form>
 				</Modal.Body>
 			</Modal>

@@ -20,11 +20,23 @@ module.exports = function (app, passport) {
             }
         }
     );
-    app.post("/signup", passport.authenticate("local-signup", {
-        successRedirect: "/",
-        failureRedirect: "/",
-        failureFlash: true
-    }));
+    // app.post("/signup", passport.authenticate("local-signup", {
+    //     successRedirect: "/",
+    //     failureRedirect: "/",
+    //     failureFlash: true
+    // }));
+    app.post("/signup", function (req, res, next) {
+        return next();
+    }, passport.authenticate("local-signup"),
+        function (req, res) {
+            if (req.user) {
+                res.json(req.user);
+            }
+            else {
+                res.sendStatus(500);
+            }
+        });
+
     app.get("/logout", function (req, res) {
         // req.logOut();
         req.session.destroy(function (err) {

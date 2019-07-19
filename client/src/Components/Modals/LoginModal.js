@@ -39,6 +39,10 @@ class MyVerticallyCenteredModal extends React.Component {
 				} 
 				else if (response.status===200 && response.data !=="OK"){
 					this.props.onHide();
+					this.setState({
+						username: "",
+						password: ""
+					});
 				}
 				else {
 					this.setState({ error: "Incorrect Username or Password!" }, ()=>{
