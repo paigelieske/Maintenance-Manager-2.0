@@ -4,6 +4,7 @@ import './Nav.css';
 const NavBar = () => (
 	<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a href="index.html">
+			<div className="loading"></div>
 			<p className="navbar-brand">Task Manager</p>
 		</a>
 		<button
@@ -21,7 +22,6 @@ const NavBar = () => (
 				<li id="nav-item-index" className="nav-item" />
 			</ul>
 		</div>
-		
 	</nav>
 );
 
