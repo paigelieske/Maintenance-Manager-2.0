@@ -20,13 +20,13 @@ function MyVerticallyCenteredModal(props) {
 				<p>
 					Maintenance requests are organized into three categories: 
 					<ul>
-						<li>Open, or new requests</li>
-						<li>Pending, or problems recognized by the building administrator</li>
-						<li>Closed, or problems deemed solved or excusable</li>
+						<li>New Requests</li>
+						<li>Scheduled, or pending requests</li>
+						<li>Completed, or requests that have been deemed solved or excusable</li>
 					</ul>
 				</p>
 				<p>
-                    To begin submitting a new maintenance request, click "New Request" and follow the instructions below to submit a maintenance order for a specific location of the facility. 
+                    To begin submitting a new maintenance request, click "New Request" and follow the buttons that appear below to submit a maintenance order for a specific location of the facility. 
 				</p>
 				<p>
 					Your request will be taken care of in order of which it was submitted, or by level of severity. Your request will be immediately sent to the building administrator via email and handled appropriately. Any additional questions regarding handling of maintenance and maintenance procedures can be addessed to Paige Lieske. 
