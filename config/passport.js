@@ -68,12 +68,14 @@ module.exports = function (passport, User) {
         var checkPasswordValid = function (realPassword, inputPassword) {
             return bCrypt.compareSync(inputPassword, realPassword);
         };
+        
         console.log("entered login strategy");
         User.findOne({
             username: username
         })
             .then(function (user) {
-                console.log(user);
+                var something = checkPasswordValid(user.password, password);
+                console.log("this is someting: "+something);
                 //if username or password doesn't match, set flash message
                 if (!user) {
                     return done(null, false, { message: "User does not exist." });
@@ -82,9 +84,11 @@ module.exports = function (passport, User) {
                     return done(null, false, { message: "Incorrect password." });
                 }
                 //if correct user & password, user gets logged in
-                var userData = user.get();
-                console.log(userData);
-                return done(null, userData);
+                // var userData = user.get();
+                console.log("asdfas"+user);
+                done(null, user);
+                // res.sendStatus(200);
+                // next();
                 //catch errors
             }).catch(function (err) {
                 console.log("Login Error: " + err);
@@ -96,7 +100,7 @@ module.exports = function (passport, User) {
 
     //serialize user cookie. Stores {id: ...} in req.session.passport.user
     passport.serializeUser(function (user, done) {
-        done(null, user.id);
+        done(null, user._id);
     });
     //deserialize user cookie. Stores req.user object
     passport.deserializeUser(function (id, done) {

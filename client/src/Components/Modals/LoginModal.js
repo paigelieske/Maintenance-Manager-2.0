@@ -26,6 +26,7 @@ class MyVerticallyCenteredModal extends React.Component {
 			password: this.state.password
 		})
 			.then(response=>{
+				console.log("200 response: "+response);
 				if(response.status===200){
 					this.props.onHide();
 				}
