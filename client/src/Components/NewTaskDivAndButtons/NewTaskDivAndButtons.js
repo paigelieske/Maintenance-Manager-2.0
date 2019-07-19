@@ -179,7 +179,7 @@ class NewTaskDivAndButtons extends React.Component {
                 },
                     () =>
                         this.setState((state) => {
-                            return (state.currentButtons.splice(0, 1, []) && state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, []) && state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, ["Maintenance request submitted!"]))
+                            return (state.currentButtons.splice(0, 1, []) && state.currentButtons.splice(1, 1, []) && state.currentButtons.splice(2, 1, []) && state.currentButtons.splice(3, 1, []) && state.currentButtons.splice(4, 1, []) && state.currentButtons.splice(5, 1, []) && state.currentButtons.splice(6, 1, ["Submitted"]))
                         }))
             }
             else {
@@ -222,7 +222,7 @@ class NewTaskDivAndButtons extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="col-lg-12 breadCrumbsDisplay">{Object.values(this.state.newTask).map((crumb, index) => (
+                <div className="col-xl-12 breadCrumbsDisplay">{Object.values(this.state.newTask).map((crumb, index) => (
 					index < 5 ? crumb + " > " : crumb))}
                 </div>
                 <StartButtonCreater
