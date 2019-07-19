@@ -21,6 +21,17 @@ nav {
 	  width: 50%;
 	  left: 25%;
 	  right: 25%;
+	  max-height: 80%;
+	  width: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  /* For mobile phones: */
+  .navbar-brand {
+	  width: 50%;
+	  left: 25%;
+	  right: 25%;
   }
 }
 
