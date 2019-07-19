@@ -74,8 +74,6 @@ module.exports = function (passport, User) {
             username: username
         })
             .then(function (user) {
-                var something = checkPasswordValid(user.password, password);
-                console.log("this is someting: "+something);
                 //if username or password doesn't match, set flash message
                 if (!user) {
                     return done(null, false, { message: "User does not exist." });
@@ -84,11 +82,8 @@ module.exports = function (passport, User) {
                     return done(null, false, { message: "Incorrect password." });
                 }
                 //if correct user & password, user gets logged in
-                // var userData = user.get();
-                console.log("asdfas"+user);
-                done(null, user);
-                // res.sendStatus(200);
-                // next();
+                return done(null, user);
+                
                 //catch errors
             }).catch(function (err) {
                 console.log("Login Error: " + err);

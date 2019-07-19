@@ -3,14 +3,13 @@ const errHandler = require("../config/errHandler");
 module.exports = function (app, passport) {
     //POST routes for login and signup
     app.post("/login", function (req, res, next) {
-        console.log("helper_auth isLoggedIn")
         if (!req.isAuthenticated()) {
-            console.log("authenticated!");
+            console.log("passing onto strategy");
             return next();
         } else {
-            console.log("didn't auth!!");
+            console.log("session is already logged in as: "+ req.user);
             // return res.redirect('../client/components/SignIn');
-            return res.sendStatus(401);
+            return res.sendStatus(200);
         }
     }, passport.authenticate("local-login"),
         function (req, res) {
