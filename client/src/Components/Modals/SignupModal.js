@@ -34,6 +34,8 @@ class MyVerticallyCenteredModal extends React.Component {
 					this.setState({ success: "Registration Successful!" }, () => {
 						setTimeout(() => {
 							this.props.onHide();
+							sessionStorage.setItem("sessionUsername", response.data.username);
+							window.location.reload();
 							this.setState({ success: "" });
 							this.setState({
 								username: "",
