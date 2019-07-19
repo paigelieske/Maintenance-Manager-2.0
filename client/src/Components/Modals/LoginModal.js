@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import axios from 'axios';
+import "./modal.css";
 
 class MyVerticallyCenteredModal extends React.Component {
 	state = {
@@ -32,7 +33,7 @@ class MyVerticallyCenteredModal extends React.Component {
 					this.setState({ error: "User already logged in, please logout first!" }, ()=>{
 						setTimeout(()=>{
 							this.setState({ error: "" });
-						},6000)
+						},5500)
 					});
 					
 				} 
@@ -43,7 +44,7 @@ class MyVerticallyCenteredModal extends React.Component {
 					this.setState({ error: "Incorrect Username or Password!" }, ()=>{
 						setTimeout(()=>{
 							this.setState({ error: "" });
-						},6000)
+						},5500)
 					});
 				}
 			})
@@ -51,9 +52,9 @@ class MyVerticallyCenteredModal extends React.Component {
 				this.setState({ error: "Incorrect Username or Password!" }, ()=>{
 					setTimeout(()=>{
 						this.setState({ error: "" });
-					},6000)
+					},5500)
 				});
-				console.error(error);
+				console.log(error);
 			})
 	}
 
@@ -104,7 +105,7 @@ class MyVerticallyCenteredModal extends React.Component {
 								onClick={this.handleSubmit}
 							/>
 						</div>
-						{this.state.error ? <div className="login-error"><h4>{this.state.error}</h4></div> : null}
+						{this.state.error ? <div className="login-error"><h6>{this.state.error}</h6></div> : null}
 					</form>
 				</Modal.Body>
 
