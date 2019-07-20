@@ -50,9 +50,13 @@ Local Mongo database can be managed using Robo3T.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [React](https://reactjs.org/) - The JavaScript library used
+* [React-Bootstrap](https://react-bootstrap.github.io/) - Front-end framework
+* [MongoDB](https://www.mongodb.com/) - Database used
+* [Passport](http://www.passportjs.org/) - User authentication
+* [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd) - Drag and drop functionality
+* [NodeMailer](https://nodemailer.com/about/) - Automatic emails sent on form submission
+* [React-Moment](https://www.npmjs.com/package/react-moment) - Time and date formatting in React
 
 
 ## Authors
