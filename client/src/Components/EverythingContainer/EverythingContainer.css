@@ -7,15 +7,15 @@
 
 .card-body {
 	min-height: 400px;
-	min-width: 300px;
 }
 
 .card {
 	border-radius: 1em;
 }
 
+
 h5 {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 
@@ -32,14 +32,42 @@ h5 {
 }
 
 .box-container {
-	min-height: 200px;
+	min-height: 300px;
+	max-height: 300px;
+	overflow: scroll;
 }
 
 .box-item {
-	width: 90%;
+	font-size: .8em;
+	width: 95%;
 	z-index: 3000;
 	margin-bottom: 5px;
 	border-radius: 1em;
+	padding: 4px;
+	max-width: 100% !important;
+}
+
+html {
+	overflow-y: overlay;
+}
+
+*::-webkit-scrollbar {
+	width: .6em;
+	overflow: overlay;
+}
+
+
+
+
+
+*::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 1em;
+}
+
+*::-webkit-scrollbar-button {
+	display: none;
 }
 
 /* Task Animation */
@@ -56,39 +84,39 @@ h5 {
 }
 
 #containeropen div:nth-child(2) {
-	animation-delay: 200ms;
-}
-
-#containeropen div:nth-child(3) {
 	animation-delay: 300ms;
 }
 
-#containeropen div:nth-child(4) {
-	animation-delay: 400ms;
-}
-
-#containeropen div:nth-child(5) {
+#containeropen div:nth-child(3) {
 	animation-delay: 500ms;
 }
 
-#containeropen div:nth-child(6) {
-	animation-delay: 600ms;
-}
-
-#containeropen div:nth-child(7) {
+#containeropen div:nth-child(4) {
 	animation-delay: 700ms;
 }
 
-#containeropen div:nth-child(8) {
-	animation-delay: 800ms;
-}
-
-#containeropen div:nth-child(9) {
+#containeropen div:nth-child(5) {
 	animation-delay: 900ms;
 }
 
+#containeropen div:nth-child(6) {
+	animation-delay: 1100ms;
+}
+
+#containeropen div:nth-child(7) {
+	animation-delay: 1300ms;
+}
+
+#containeropen div:nth-child(8) {
+	animation-delay: 1500ms;
+}
+
+#containeropen div:nth-child(9) {
+	animation-delay: 1700ms;
+}
+
 #containeropen div:nth-child(10) {
-	animation-delay: 1000ms;
+	animation-delay: 1900ms;
 }
 
 #containerpending div {
@@ -103,39 +131,39 @@ h5 {
 }
 
 #containerpending div:nth-child(2) {
-	animation-delay: 200ms;
-}
-
-#containerpending div:nth-child(3) {
 	animation-delay: 300ms;
 }
 
-#containerpending div:nth-child(4) {
-	animation-delay: 400ms;
-}
-
-#containerpending div:nth-child(5) {
+#containerpending div:nth-child(3) {
 	animation-delay: 500ms;
 }
 
-#containerpending div:nth-child(6) {
-	animation-delay: 600ms;
-}
-
-#containerpending div:nth-child(7) {
+#containerpending div:nth-child(4) {
 	animation-delay: 700ms;
 }
 
-#containerpending div:nth-child(8) {
-	animation-delay: 800ms;
-}
-
-#containerpending div:nth-child(9) {
+#containerpending div:nth-child(5) {
 	animation-delay: 900ms;
 }
 
+#containerpending div:nth-child(6) {
+	animation-delay: 1100ms;
+}
+
+#containerpending div:nth-child(7) {
+	animation-delay: 1300ms;
+}
+
+#containerpending div:nth-child(8) {
+	animation-delay: 1500ms;
+}
+
+#containerpending div:nth-child(9) {
+	animation-delay: 1700ms;
+}
+
 #containerpending div:nth-child(10) {
-	animation-delay: 1000ms;
+	animation-delay: 1900ms;
 }
 
 #containerclosed div {
@@ -150,39 +178,39 @@ h5 {
 }
 
 #containerclosed div:nth-child(2) {
-	animation-delay: 200ms;
-}
-
-#containerclosed div:nth-child(3) {
 	animation-delay: 300ms;
 }
 
-#containerclosed div:nth-child(4) {
-	animation-delay: 400ms;
-}
-
-#containerclosed div:nth-child(5) {
+#containerclosed div:nth-child(3) {
 	animation-delay: 500ms;
 }
 
-#containerclosed div:nth-child(6) {
-	animation-delay: 600ms;
-}
-
-#containerclosed div:nth-child(7) {
+#containerclosed div:nth-child(4) {
 	animation-delay: 700ms;
 }
 
-#containerclosed div:nth-child(8) {
-	animation-delay: 800ms;
-}
-
-#containerclosed div:nth-child(9) {
+#containerclosed div:nth-child(5) {
 	animation-delay: 900ms;
 }
 
+#containerclosed div:nth-child(6) {
+	animation-delay: 1100ms;
+}
+
+#containerclosed div:nth-child(7) {
+	animation-delay: 1300ms;
+}
+
+#containerclosed div:nth-child(8) {
+	animation-delay: 1500ms;
+}
+
+#containerclosed div:nth-child(9) {
+	animation-delay: 1700ms;
+}
+
 #containerclosed div:nth-child(10) {
-	animation-delay: 1000ms;
+	animation-delay: 1900ms;
 }
 
 @keyframes animateIn {
@@ -201,36 +229,36 @@ h5 {
 [id='1'],
 [id='1']:hover,
 [id='1']:active {
-	background-color: #ffaaaa !important;
-	border-color: #ffaaaa !important;
+	background-color: #fcbba1 !important;
+	border-color: #fcbba1 !important;
 }
 
 [id='2'],
 [id='2']:hover,
 [id='2']:active {
-	background-color: #ff5555;
-	border-color: #ff5555;
+	background-color: #fc9272;
+	border-color: #fc9272;
 }
 
 [id='3'],
 [id='3']:hover,
 [id='3']:active {
-	background-color: #ff2a2a;
-	border-color: #ff2a2a;
+	background-color: #de2d26;
+	border-color: #de2d26;
 }
 
 [id='4'],
 [id='4']:hover,
 [id='4']:active {
-	background-color: #aa0000;
-	border-color: #aa0000;
+	background-color: #de2d26;
+	border-color: #de2d26;
 }
 
 [id='5'],
 [id='5']:hover,
 [id='5']:active {
-	background-color: #800000;
-	border-color: #800000;
+	background-color: #a50f15;
+	border-color: #a50f15;
 }
 
 /* New Task Button and Form */
@@ -385,14 +413,14 @@ input:active {
 	background-color: #1b3b66;
 	border-radius: 1em;
 	border: none;
-	min-width: 6%;
+	min-width: 8% !important;
 }
 
 .signup-button {
 	position: absolute;
 	right: 200px;
 	top: 30px;
-	min-width: 6%;
+	min-width: 8% !important;
 }
 
 .help-button {
@@ -402,24 +430,41 @@ input:active {
 	background-color: #ffffff;
 	color: #1b3b66;
 	border: 1px solid #1b3b66;
-	min-width: 6%;
+	min-width: 8% !important;
+}
+
+.help-button:hover {
+	background-color: #31313b;
+	border-color: #31313b;
 }
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
 	.login-button, .signup-button, .help-button {
 		position: initial;
-		display: flex;
-		margin: 10px auto;
+		padding: 20px;
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+		border-radius: 0;
+		text-align: center !important;
+		background-color: #1b3b66;
 	}
 
 	.login-button {
-		margin-top: 40px;
+		margin-top: 0px;
 	}
 
-	.help-button {
-		margin-bottom: 30px;
+	.signup-button {
+		border-top: 1px solid #ffffff;
+		border-bottom: 1px solid #ffffff;
 	}
+
+	.help-button {	
+		margin-bottom: 30px;
+		color: #ffffff;
+	}
+	
 
 }
 
@@ -430,4 +475,78 @@ input:active {
 
 .help-button:active, .help-button:focus {
 	background-color: #ffffff;
+}
+
+.btn:focus{
+    box-shadow:none !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #31313b;
+    border-color: #31313b;
+}
+
+.modal-backdrop {
+	background-color: #ffffff;
+}
+
+.modal-content {
+	border-radius: 1em;
+	box-shadow: 10px 10px 5px grey;
+	color: #1b3b66;
+}
+
+@media screen and (min-width:1200px) {
+	.signup-button {
+		right: 250px;
+	}
+
+	.help-button {
+		right: 400px;
+	}
+}
+
+@media screen and (min-width:1800px) {
+	.signup-button {
+		right: 300px;
+	}
+
+	.help-button {
+		right: 500px;
+	}
+}
+
+.Droppable {
+	display: flex;
+	flex-direction: column;
+	min-width: 100%;
+}
+
+.card-body {
+	min-width: 100%;
+}
+
+.time-hide .box-item time {
+	display: none;
+}
+
+.time-hide .box-item {
+	background-color: #408915 !important;
+	border-color: #408915 !important;
+}
+
+
+#container0Div, #container1Div, #container2Div {
+	margin-bottom: 50px !important;
+}
+
+#notes-ital {
+	font-style: italic;
+}
+
+#notes-ital:empty {
+	display: none;
 }

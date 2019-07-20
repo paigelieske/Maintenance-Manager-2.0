@@ -9,7 +9,7 @@ function Button(props) {
 						type="text"
 						id="problemNotes"
 						className="form-control text-center"
-						placeholder="Please Specify Problem (i.e. The sink is leaking)"
+						placeholder="Briefly describe the problem (i.e. The sink is leaking)"
 						onChange={props.onChange}
 						maxLength="30"
 					/>
