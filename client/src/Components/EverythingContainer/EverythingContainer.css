@@ -1,3 +1,7 @@
+* {
+	font-family	: 'Open Sans', sans-serif;
+}
+
 .row {
 	max-width: 90%;
 	margin: auto;
@@ -414,6 +418,7 @@ input:active {
 	border-radius: 1em;
 	border: none;
 	min-width: 8% !important;
+	font-size: .9em;
 }
 
 .signup-button {
@@ -421,6 +426,7 @@ input:active {
 	right: 200px;
 	top: 30px;
 	min-width: 8% !important;
+	font-size: .9em;
 }
 
 .help-button {
@@ -431,6 +437,7 @@ input:active {
 	color: #1b3b66;
 	border: 1px solid #1b3b66;
 	min-width: 8% !important;
+	font-size: .9em;
 }
 
 .help-button:hover {
