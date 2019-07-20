@@ -28,8 +28,7 @@ const taskSchema = new Schema({
   },
   note: { 
     type: String, 
-    // required: true,
-    // maxlength: 30
+    required: true 
   },
   status: { 
     type: String, 

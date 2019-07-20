@@ -14,6 +14,6 @@ export default {
         return axios.post("/sendemail", taskData);
     },
     updateTask: function(id) {
-        return axios.put("/api/tasks/" + id);
+        return axios.put("/api/tasks" + id);
     }
 };

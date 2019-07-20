@@ -11,7 +11,7 @@ function Button(props) {
 						className="form-control text-center"
 						placeholder="Briefly describe the problem (i.e. The sink is leaking)"
 						onChange={props.onChange}
-						maxLength="30"
+						maxlength="30"
 					/>
 					<button
 						id="submitNotes"

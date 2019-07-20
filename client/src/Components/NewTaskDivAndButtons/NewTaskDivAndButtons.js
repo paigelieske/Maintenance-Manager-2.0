@@ -16,6 +16,7 @@ class NewTaskDivAndButtons extends React.Component {
         API.getTasks()
             .then(res => {
                 this.setState({ tasks: res.data });
+                console.log(this.state.tasks);
                 this.emailTask()
             })
             .catch(err => console.log(err));
@@ -190,6 +191,7 @@ class NewTaskDivAndButtons extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        console.log("api");
         API.saveTask({
             zone: this.state.newTask.zone,
             department: this.state.newTask.department,
@@ -201,6 +203,7 @@ class NewTaskDivAndButtons extends React.Component {
             .then(res => this.loadTasks())
             .catch(err => console.log(err));
     }
+
 
     emailTask = () => {
         API.emailTask({
