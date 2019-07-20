@@ -1,7 +1,6 @@
 const emailRoute = require("express").Router();
 const nodemailer = require("nodemailer");
 const EMAIL_PASS = process.env.EMAIL_PASS;
-const EMAIL_USER = process.env.EMAIL_USER;
 
 emailRoute.route("/sendemail")
     .post((req, res) => {
@@ -9,10 +8,10 @@ emailRoute.route("/sendemail")
         const output = `
       <h3> You have a new maintenance request. </h3>
       <ul>
-        <li> Name: ${req.body.name} </li>
         <li> Zone: ${req.body.zone} </li>
         <li> Department: ${req.body.department} </li>
         <li> Room: ${req.body.room} </li>
+        <le> Problem: ${req.body.problem} </li>
         <li> Severity: ${req.body.severity} </li>
         <li> Notes: ${req.body.note} </li>
       <ul>
