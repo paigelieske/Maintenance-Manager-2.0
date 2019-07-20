@@ -8,13 +8,13 @@ import SignupModal from './Components/Modals/SignupModal';
 import HelpModal from './Components/Modals/HelpModal';
 
 function App() {
-	return (
+  return (
 		<React.Fragment>
 			<Router>
 				<NavBar />
-				<LoginModal />
-				<SignupModal />
-				<HelpModal />
+				<LoginModal/>
+        <SignupModal/>
+        <HelpModal />
 				<Switch>
 					<Route exact path="/" component={UserPage} />
 					<Route exact path="/users" component={UserPage} />
@@ -24,7 +24,7 @@ function App() {
 				<Footer />
 			</Router>
 		</React.Fragment>
-	);
+  );
 }
 
 export default App;

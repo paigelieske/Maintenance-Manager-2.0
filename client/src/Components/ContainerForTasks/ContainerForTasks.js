@@ -10,7 +10,7 @@ class ContainerForTasks extends React.Component {
 		pending: [],
 		closed: [],
 		taskStatusArray: ['open', 'pending', 'closed'],
-		tasks: []
+		// tasks: []
 	};
 
 	componentDidMount() {
@@ -74,14 +74,9 @@ class ContainerForTasks extends React.Component {
 			.catch(err => console.log(err));
 	};
 
-	// componentDidUpdate() {
-	//     this.loadTasks();
-	// }
-
 	onDrop(data) {
 		let dataArr = data.problem.split(',');
 		let id = dataArr[7];
-		console.log(this.state.tasks);
 		dataArr.map(item => {
 			if (item === 'open') {
 				axios
@@ -101,7 +96,10 @@ class ContainerForTasks extends React.Component {
 						status: 'closed'
 					})
 					.then(response => {
-						this.setState(this.state.closed);
+						console.log(response);
+						this.setState({ closed: this.state.closed });
+						this.loadTasks();
+						window.location.reload();
 					});
 			}
 		});

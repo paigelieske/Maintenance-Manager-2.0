@@ -12,6 +12,7 @@ class MyVerticallyCenteredModal extends React.Component {
 		error: ""
 	}
 
+
 	handleChange = event => {
 		const { name, value } = event.target;
 		this.setState({
@@ -19,44 +20,46 @@ class MyVerticallyCenteredModal extends React.Component {
 		});
 	}
 
-	handleSubmit = event =>{
+	handleSubmit = event => {
 		event.preventDefault();
 		console.log(`login, username: ${this.state.username}`);
 
-		axios.post("/login",{
+		axios.post("/login", {
 			username: this.state.username,
 			password: this.state.password
 		})
-			.then(response=>{
+			.then(response => {
 				console.log(response);
-				if(response.status===200 && response.data ==="OK"){
-					this.setState({ error: "User already logged in, please logout first!" }, ()=>{
-						setTimeout(()=>{
+				if (response.status === 200 && response.data === "OK") {
+					this.setState({ error: "User already logged in, please logout first!" }, () => {
+						setTimeout(() => {
 							this.setState({ error: "" });
-						},5500)
+						}, 5500)
 					});
-					
-				} 
-				else if (response.status===200 && response.data !=="OK"){
+
+				}
+				else if (response.status === 200 && response.data !== "OK") {
 					this.props.onHide();
+					sessionStorage.setItem("sessionUsername", response.data.username);
+					window.location.reload();
 					this.setState({
 						username: "",
 						password: ""
 					});
 				}
 				else {
-					this.setState({ error: "Incorrect Username or Password!" }, ()=>{
-						setTimeout(()=>{
+					this.setState({ error: "Incorrect Username or Password!" }, () => {
+						setTimeout(() => {
 							this.setState({ error: "" });
-						},5500)
+						}, 5500)
 					});
 				}
 			})
-			.catch(error=>{
-				this.setState({ error: "Incorrect Username or Password!" }, ()=>{
-					setTimeout(()=>{
+			.catch(error => {
+				this.setState({ error: "Incorrect Username or Password!" }, () => {
+					setTimeout(() => {
 						this.setState({ error: "" });
-					},5500)
+					}, 5500)
 				});
 				console.log(error);
 			})
