@@ -9,10 +9,10 @@ emailRoute.route("/sendemail")
         const output = `
       <h3> You have a new maintenance request. </h3>
       <ul>
-        <li> Name: ${req.body.name} </li>
         <li> Zone: ${req.body.zone} </li>
         <li> Department: ${req.body.department} </li>
         <li> Room: ${req.body.room} </li>
+        <li> Problem: ${req.body.problem} </li>
         <li> Severity: ${req.body.severity} </li>
         <li> Notes: ${req.body.note} </li>
       <ul>

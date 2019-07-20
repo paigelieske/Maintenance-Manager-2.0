@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 ;}
 
 //passport, session, and flash middleware for authentication, persistent login, and error-handling
-app.use(session({ secret: process.env.secret || "temporary secret" }));
+// app.use(session({ secret: process.env.secret || "temporary secret" }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -38,6 +38,8 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/maintenancemanager",
   { useNewUrlParser: true }
 );
+
+mongoose.set("useFindAndModify", false)
 
 app.listen(PORT, () => {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
