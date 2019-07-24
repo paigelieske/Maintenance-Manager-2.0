@@ -11,7 +11,7 @@ emailRoute.route("/sendemail")
         <li> Zone: ${req.body.zone} </li>
         <li> Department: ${req.body.department} </li>
         <li> Room: ${req.body.room} </li>
-        <le> Problem: ${req.body.problem} </li>
+        <li> Problem: ${req.body.problem} </li>
         <li> Severity: ${req.body.severity} </li>
         <li> Notes: ${req.body.note} </li>
       <ul>

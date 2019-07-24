@@ -1,6 +1,6 @@
 import React from "react";
 import "./EverythingContainer.css";
-import Card from "react-bootstrap/Card";
+// import Card from "react-bootstrap/Card";
 
 function EverythingContainer({ children }) {
     return (
